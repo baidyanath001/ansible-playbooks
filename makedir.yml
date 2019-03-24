@@ -1,0 +1,8 @@
+- hosts: 192.168.56.101
+  tasks:
+  - name: Create directory
+    file:
+      path: /tmp/testdir
+      state: directory 
+      mode: "u=rwx,g=wx,o=wx"
+

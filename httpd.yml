@@ -1,0 +1,11 @@
+---
+- hosts: 192.168.56.102
+  tasks:
+    - name: Installs httpd web server
+      yum: pkg=httpd state=installed update_cache=true
+      notify:
+        - start httpd
+
+  handlers:
+    - name: start httpd
+      service: name=httpd state=started

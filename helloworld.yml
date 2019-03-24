@@ -1,0 +1,8 @@
+---
+- name: This is hello-world exmple
+  hosts: 192.168.56.101
+  tasks: 
+  - name: Create a file called '/tmp/helloworld.txt' with the content 'hello wolrd'.
+    copy:
+      content: "hello world\n"
+      dest: /tmp/helloworld.txt
