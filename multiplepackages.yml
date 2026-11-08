@@ -1,1 +1,14 @@
-
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+    - name: Install the multiple packages on Ubuntu servers.
+      apt:
+        name:
+          - vim
+          - git
+          - wget
+          - net-tools
+          - screen
+          - tmux
+        state: present
