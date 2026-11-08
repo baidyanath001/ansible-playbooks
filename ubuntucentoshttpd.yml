@@ -1,1 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install Apache on RHEL/CentOS
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
 
+    - name: Install Apache on Ubuntu
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
